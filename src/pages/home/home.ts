@@ -18,7 +18,10 @@ export class HomePage {
             data => {
                 this.foundRepos = data;
             },
-            err => console.error(err),
+			err => {
+                console.error(err);
+                this.foundRepos = [];
+            },
             () => console.log('getRepos completed')
         );
     }
